@@ -1,16 +1,17 @@
 (ns structured-data)
 
 (defn do-a-thing [x]
-  :-)
+ (let [x (+ x x)]
+   x))
 
 (defn spiff [v]
-  :-)
+ (+ (get v 0) (get v 2))) //get a NullPointerException when passing a vector too short
 
 (defn cutify [v]
-  :-)
+ ( conj v "<3"))
 
 (defn spiff-destructuring [v]
-  :-)
+ (+ (first v)(nth v 2))) 
 
 (defn point [x y]
   [x y])
@@ -19,37 +20,42 @@
   [bottom-left top-right])
 
 (defn width [rectangle]
-  :-)
+  (-(first rectangle)(first rectangle)))  //do this one
 
 (defn height [rectangle]
-  :-)
+  :-) //do this one
 
 (defn square? [rectangle]
-  :-)
+  :-) //do this one
 
 (defn area [rectangle]
-  :-)
+  :-) //do this one
 
 (defn contains-point? [rectangle point]
-  :-)
+  :-) //do this one
 
 (defn contains-rectangle? [outer inner]
-  :-)
+  :-) //do this one
 
 (defn title-length [book]
-  :-)
+  (count (:title book))) //it counts spaces as well
 
 (defn author-count [book]
-  :-)
+  (count (:authors book)))
 
 (defn multiple-authors? [book]
-  :-)
+ (cond
+   (> (count (:authors book)) 1)
+      true
+      :else false))
 
 (defn add-author [book new-author]
-  :-)
+:-)
 
 (defn alive? [author]
-  :-)
+ (cond
+   (contains? author :death-year) false
+   :else true))
 
 (defn element-lengths [collection]
   :-)
@@ -85,7 +91,7 @@
   :-)
 
 (defn author->string [author]
-  :-)
+:-)
 
 (defn authors->string [authors]
   :-)
